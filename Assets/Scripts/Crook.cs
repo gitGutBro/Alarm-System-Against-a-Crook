@@ -1,7 +1,3 @@
 using UnityEngine;
 
-
-public class Crook : MonoBehaviour
-{
-
-}
+public class Crook : MonoBehaviour { }

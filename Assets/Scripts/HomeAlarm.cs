@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class AlarmSystem : MonoBehaviour
+public class HomeAlarm : MonoBehaviour
 {
     public event Action CrookInEvent;
     public event Action CrookOutEvent;

@@ -1,13 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Alarm : MonoBehaviour
 {
     private const float MaxVolume = 1.0f;
     private const float MinVolume = 0f;
 
     [SerializeField] private float _volumeSpeedChanging;
-    [SerializeField] private AlarmSystem _detector;
+    [SerializeField] private HomeAlarm _detector;
 
     private Coroutine _activeCoroutine;
     private AudioSource _sound;
