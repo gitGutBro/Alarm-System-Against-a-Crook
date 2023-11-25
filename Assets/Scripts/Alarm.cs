@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Alarm : MonoBehaviour
 {
+    private const float MaxVolume = 1.0f;
+    private const float MinVolume = 0f;
+
     [SerializeField] private float _volumeSpeedChanging;
     [SerializeField] private AlarmSystem _detector;
 
@@ -26,18 +29,18 @@ public class Alarm : MonoBehaviour
         => _sound = GetComponent<AudioSource>();
 
     private void Start()
-        => _sound.volume = 0;
+        => _sound.volume = MinVolume;
 
     public void Play()
     {
-        _requiredVolume = 1f;
+        _requiredVolume = MaxVolume;
         _sound.Play();
         _activeCoroutine = StartCoroutine(ChangeVolume());
     }
 
     public void Stop()
     {
-        _requiredVolume = 0f;
+        _requiredVolume = MinVolume;
         StopCoroutine(_activeCoroutine);
         _activeCoroutine = StartCoroutine(ChangeVolume());
     }
